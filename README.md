@@ -61,3 +61,10 @@ DB_PASSWORD=</code>
     "password": "secret"
 }</code>
 
+
+
+
+Unit Tests and Additional Considerations:
+
+    Running Unit Tests: Execute PHPUnit tests with php artisan test to ensure code quality and functionality.
+
