@@ -11,14 +11,6 @@
 
 <code> cp .env.example .env</code>
 
-## Configure Environment Variables
-
-<code> cp .env.example .env</code>
-
-## Configure Environment Variables
-
-<code> cp .env.example .env</code>
-
 <code> DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
