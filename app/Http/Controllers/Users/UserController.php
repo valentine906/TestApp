@@ -339,7 +339,7 @@ class UserController extends Controller
             'phone_number' => $request->phone_number,
 
             'network_provider' => $request->network_provider,
-            
+
 
         ]);
 
