@@ -60,12 +60,9 @@ DB_PASSWORD=</code>
 <code> GET /api/get/users</code>
 
 ##
-<p>Get Your Login Details Balance  </p>
+<p>Check Your Balance.  </p>
 <code> GET /api/wallet/balance </code>
 
-##
-<p>Get Your Login Details Balance  </p>
-<code> GET /api/wallet/balance </code>
 
 ##
 <p>Fund Your Wallet  Balance </p>
