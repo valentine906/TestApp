@@ -12,10 +12,15 @@
 <code> cp .env.example .env</code>
 
 <code> DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
-DB_DATABASE=TestApp
+
+DB_DATABASE=testApp
+
 DB_USERNAME=root
+
 DB_PASSWORD=</code>
 
 ## Install Composer Dependencies
@@ -30,7 +35,7 @@ DB_PASSWORD=</code>
 
 <code> php artisan migrate</code>
 
-## Seed the Database
+## Seed the Database (Optional only if you want to generate a random users)
 
 <code> php artisan db:seed --class=UsersTableSeeder</code>
 
@@ -38,25 +43,54 @@ DB_PASSWORD=</code>
 
 <code>php artisan serve</code>
 
-## Accessing Users via API Endpoints
+## Accessing via API Endpoints
+<p>Register</p>
+<p><code> POST /api/register</code></p>
+<p><code> Key: username</code></p>
+<p><code> Key: email</code></p>
+<p><code> Key: password</code></p>
 
-<code> GET http://localhost:8000/api/users</code>
+##
+<p>Login </p>
+<p><code> POST /api/login</code></p>
+<p><code> Key: email</code></p>
+<p><code> Key: password</code></p>
 
-## Store a New User
+##
+<p>Get Your Login Details Using The Bearer Token Generated  </p>
+<code> GET /api/user</code>
 
-<code> POST http://localhost:8000/api/users/store</code>
+##
+<p>Get All Registered Users  </p>
+<code> GET /api/get/users</code>
 
-<code>Body (JSON):
-{
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "password": "secret"
-}</code>
-
+##
+<p>Check Your Balance.  </p>
+<code> GET /api/wallet/balance </code>
 
 
+##
+<p>Fund Your Wallet  Balance </p>
+<p><code> POST /api/wallet/fund </code></p>
+<p><code> Key: amount</code></p>
 
-Unit Tests and Additional Considerations:
+##
+<p>Purchase Data From MTN, GLO, AIRTEL, 9MOBILE  </p>
+<p><code> POST /api/purchase/airtime </code></p>
+<p><code> Key: phone_number</code></p>
+<p><code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code></p>
+<p><code> Key: data_plan , value: (You must select data from 1GB,2GB,5GB,10GB)</code></p>
+<p><code> Key: amount</code></p>
 
-    Running Unit Tests: Execute PHPUnit tests with php artisan test to ensure code quality and functionality.
 
+##
+<p>Purchase Airtime From MTN, GLO, AIRTEL, 9MOBILE  </p>
+<p><code> POST /api/purchase/data </code></p>
+<p><code> Key: phone_number</code></p>
+<p><code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code></p>
+<p><code> Key: amount</code></p>
+
+
+##
+<p>View transaction history  </p>
+<code> GET /api/transactions </code>
