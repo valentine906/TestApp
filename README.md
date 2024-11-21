@@ -12,10 +12,15 @@
 <code> cp .env.example .env</code>
 
 <code> DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=TestApp
+
 DB_USERNAME=root
+
 DB_PASSWORD=</code>
 
 ## Install Composer Dependencies
@@ -38,7 +43,7 @@ DB_PASSWORD=</code>
 
 <code>php artisan serve</code>
 
-## Accessing Users via API Endpoints
+## Accessing via API Endpoints
 
 <code> GET http://localhost:8000/api/users</code>
 
