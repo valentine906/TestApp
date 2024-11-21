@@ -45,11 +45,16 @@ DB_PASSWORD=</code>
 
 ## Accessing via API Endpoints
 <p>Register</p>
-<code> POST /api/register</code>
+<p><code> POST /api/register</code></p>
+<p><code> Key: username</code></p>
+<p><code> Key: email</code></p>
+<p><code> Key: password</code></p>
 
 ##
 <p>Login </p>
-<code> POST /api/login</code>
+<p><code> POST /api/login</code></p>
+<p><code> Key: email</code></p>
+<p><code> Key: password</code></p>
 
 ##
 <p>Get Your Login Details Using The Bearer Token Generated  </p>
