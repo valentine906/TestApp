@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('airtime_purchases', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->decimal('wallet_balance', 10, 2)->default(0.00);
-            $table->rememberToken();
+            $table->foreignId('transaction_id')->constrained()->onDelete('cascade');
+            $table->string('phone_number');
+            $table->enum('network_provider', ['MTN', 'GLO', 'AIRTEL', '9MOBILE']);
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('airtime_purchases');
     }
 };
