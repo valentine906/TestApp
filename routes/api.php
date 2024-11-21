@@ -17,7 +17,7 @@ use App\Http\Controllers\Users\UserController;
 */
 
 
-Route::post('/users/store', [UserController::class, 'register']);
+Route::post('/register', [UserController::class, 'register']);
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
@@ -33,7 +33,9 @@ Route::middleware(['auth:sanctum','throttle:10,1'])->group(function() {
 
     Route::post('/wallet/fund', [UserController::class, 'fundWallet']);
 
-    Route::post('/purchase/airtime', [UserController::class, 'purchase']);
+    Route::post('/purchase/data', [UserController::class, 'purchase_data']);
+
+    Route::post('/purchase/airtime', [UserController::class, 'purchase_airtime']);
 
     Route::get('/transactions', [UserController::class, 'transactions']);
 

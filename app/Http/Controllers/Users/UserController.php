@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\AirtimePurchase;
 use App\Models\DataPurchase;
 use App\Models\Transaction;
 use Carbon\Carbon;
@@ -196,9 +197,9 @@ class UserController extends Controller
 
 
 
-//.......... PURCHASING AIRTIME SECTION
+//.......... PURCHASING DATA SECTION
 
-    public function purchase(Request $request)
+    public function purchase_data(Request $request)
 
     {
 
@@ -243,7 +244,7 @@ class UserController extends Controller
 
 
 
-        $airtimePurchase = DataPurchase::create([
+        $dataPurchase = DataPurchase::create([
 
             'transaction_id' => $transaction_id->id,
 
@@ -254,6 +255,91 @@ class UserController extends Controller
             'data_plan' => $request->data_plan,
 
             'amount' => $request->amount,
+
+        ]);
+
+        DB::table('users')->where('id', auth()->user()->id)->decrement('wallet_balance',$request->amount);
+
+
+
+        // Log the successful transaction
+
+        Log::channel('data')->info('Data purchase successful', [
+
+            'phone_number' => $dataPurchase->phone_number,
+
+            'network_provider' => $dataPurchase->network_provider,
+
+            'amount' => $dataPurchase->amount,
+
+
+        ]);
+
+
+        return response()->json([
+
+            'message' => 'Airtime purchased successfully.',
+
+            'data' => $dataPurchase,
+
+        ], 201);
+
+    }
+
+//.......... PURCHASING AIRTIME SECTION
+
+    public function purchase_airtime(Request $request)
+
+    {
+
+        // Validate the request
+
+        $validator = Validator::make($request->all(), [
+
+
+            'phone_number' => 'required|string',
+
+            'network_provider' => 'required|in:MTN,GLO,AIRTEL,9MOBILE',
+
+
+            'amount' => 'required|numeric|min:1',
+
+        ]);
+
+
+        if ($request->amount > auth()->user()->wallet_balance) {
+
+            return response()->json(['errors' => 'Insufficient balance.'], 422);
+
+        }elseif($validator->fails()){
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $transaction_id =  Transaction::create([
+
+            'user_id' => auth()->user()->id,
+
+            'transaction_type' => $request->network_provider,
+
+            'amount' => $request->amount,
+
+            'transaction_date' => Carbon::now(),
+
+            'status' => 'completed',
+
+        ]);
+
+
+
+
+        $airtimePurchase = AirtimePurchase::create([
+
+            'transaction_id' => $transaction_id->id,
+
+            'phone_number' => $request->phone_number,
+
+            'network_provider' => $request->network_provider,
+            
 
         ]);
 
@@ -284,6 +370,7 @@ class UserController extends Controller
         ], 201);
 
     }
+
 
 
 //................. TRANSACTIONS
