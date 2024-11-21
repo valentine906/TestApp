@@ -70,7 +70,7 @@ DB_PASSWORD=</code>
 ##
 <p>Fund Your Wallet  Balance </p>
 <code> POST /api/wallet/fund </code>
-<code> Key: amount</code>
+<p><code> Key: amount</code></p>
 
 ##
 <p>Purchase Airtime From MTN, GLO, AIRTEL, 9MOBILE  </p>
