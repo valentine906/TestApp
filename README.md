@@ -52,11 +52,11 @@ DB_PASSWORD=</code>
 <code> POST /api/login</code>
 
 ##
-<p>Get Your Login Details using the bearer Token Generated  </p>
+<p>Get Your Login Details Using The Bearer Token Generated  </p>
 <code> GET /api/user</code>
 
 ##
-<p>Get all registered users  </p>
+<p>Get All Registered Users  </p>
 <code> GET /api/get/users</code>
 
 ##
@@ -69,13 +69,13 @@ DB_PASSWORD=</code>
 
 ##
 <p>Fund Your Wallet  Balance </p>
-<code> POST /api/wallet/fund </code>
+<p><code> POST /api/wallet/fund </code></p>
 <p><code> Key: amount</code></p>
 
 ##
 <p>Purchase Airtime From MTN, GLO, AIRTEL, 9MOBILE  </p>
-<code> POST /api/purchase/airtime </code>
-<code> Key: phone_number</code>
-<code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code>
-<code> Key: data_plan , value: (You must select data from 1GB,2GB,5GB,10GB)</code>
-<code> Key: amount</code>
+<p><code> POST /api/purchase/airtime </code></p>
+<p><code> Key: phone_number</code></p>
+<p><code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code></p>
+<p><code> Key: data_plan , value: (You must select data from 1GB,2GB,5GB,10GB)</code></p>
+<p><code> Key: amount</code></p>
