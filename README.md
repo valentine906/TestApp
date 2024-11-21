@@ -35,7 +35,7 @@ DB_PASSWORD=</code>
 
 <code> php artisan migrate</code>
 
-## Seed the Database
+## Seed the Database (Optional only if you want generate random users)
 
 <code> php artisan db:seed --class=UsersTableSeeder</code>
 
@@ -44,10 +44,18 @@ DB_PASSWORD=</code>
 <code>php artisan serve</code>
 
 ## Accessing via API Endpoints
+<p>Register</p>
+<code> GET http://localhost:8000/api/register</code>
 
-<code> GET http://localhost:8000/api/users</code>
+<p>Login </p>
+<code> GET http://localhost:8000/api/login</code>
 
-## Store a New User
+<p>Get Your Login Details using the bearer Token Generated  </p>
+<code> GET http://localhost:8000/api/user</code>
+
+<p>Get all registered users  </p>
+<code> GET http://localhost:8000/api/get/users</code>
+
 
 <code> POST http://localhost:8000/api/users/store</code>
 
