@@ -79,3 +79,7 @@ DB_PASSWORD=</code>
 <p><code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code></p>
 <p><code> Key: data_plan , value: (You must select data from 1GB,2GB,5GB,10GB)</code></p>
 <p><code> Key: amount</code></p>
+
+##
+<p>View transaction history  </p>
+<code> GET /api/transactions </code>
