@@ -28,7 +28,7 @@ Route::middleware(['auth:sanctum','throttle:10,1'])->group(function() {
     Route::get('/get/users', [UserController::class, 'index']);
 
     Route::get('/user', [UserController::class, 'getUser']);
-
+v
     Route::get('/wallet/balance', [UserController::class, 'getUserBalance']);
 
     Route::post('/wallet/fund', [UserController::class, 'fundWallet']);
