@@ -47,6 +47,7 @@ DB_PASSWORD=</code>
 <p>Register</p>
 <code> GET http://localhost:8000/api/register</code>
 
+##
 <p>Login </p>
 <code> GET http://localhost:8000/api/login</code>
 
