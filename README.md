@@ -45,34 +45,37 @@ DB_PASSWORD=</code>
 
 ## Accessing via API Endpoints
 <p>Register</p>
-<code> GET http://localhost:8000/api/register</code>
+<code> POST /api/register</code>
 
 ##
 <p>Login </p>
-<code> GET http://localhost:8000/api/login</code>
+<code> POST /api/login</code>
 
 ##
 <p>Get Your Login Details using the bearer Token Generated  </p>
-<code> GET http://localhost:8000/api/user</code>
+<code> GET /api/user</code>
 
 ##
 <p>Get all registered users  </p>
-<code> GET http://localhost:8000/api/get/users</code>
+<code> GET /api/get/users</code>
 
+##
+<p>Get Your Login Details Balance  </p>
+<code> GET /api/wallet/balance </code>
 
-<code> POST http://localhost:8000/api/users/store</code>
+##
+<p>Get Your Login Details Balance  </p>
+<code> GET /api/wallet/balance </code>
 
-<code>Body (JSON):
-{
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "password": "secret"
-}</code>
+##
+<p>Fund Your Wallet  Balance </p>
+<code> POST /api/wallet/fund </code>
+<code> Key: amount</code>
 
-
-
-
-Unit Tests and Additional Considerations:
-
-    Running Unit Tests: Execute PHPUnit tests with php artisan test to ensure code quality and functionality.
-
+##
+<p>Purchase Airtime From MTN, GLO, AIRTEL, 9MOBILE  </p>
+<code> POST /api/purchase/airtime </code>
+<code> Key: phone_number</code>
+<code> Key: network_provider , value: (You must select one network MTN, GLO, AIRTEL, 9MOBILE)</code>
+<code> Key: data_plan , value: (You must select data from 1GB,2GB,5GB,10GB)</code>
+<code> Key: amount</code>
